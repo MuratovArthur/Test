@@ -3,12 +3,14 @@ const mongoose = require('mongoose');
 const AdminBro = require('admin-bro');
 const session = require('express-session')
 const AdminBroExpress = require('@admin-bro/express');
-const AdminBroMongoose = require('@admin-bro/mongoose')
+const AdminBroMongoose = require('@admin-bro/mongoose');
+
+require('dotenv').config()
 
 const app = express()
 
 app.use(session({ 
-  secret:  "secret",
+  secret: process.env.secret,
   resave: true,
   saveUninitialized: true
 }));
