@@ -6,4 +6,7 @@ app.get("/", function (req, res){
    res.render('landing.ejs');
 });
 
-app.listen(3000, () => console.log('Server is working'))
+var port = process.env.PORT || 3000;
+app.listen(port, function () {
+console.log("Server Has Started!");
+});
